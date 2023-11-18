@@ -1,0 +1,199 @@
+:root {
+  /* Color */
+  --Red-clr: hsl(1, 90%, 64%);
+  --Blue-clr: hsl(219, 85%, 26%);
+  --White-clr: hsl(0, 0%, 100%);
+  --Very-light-grayish-blue-clr: hsl(210, 60%, 98%);
+  --Light-grayish-blue-1-clr: hsl(211, 68%, 94%);
+  --Light-grayish-blue-2-clr: hsl(205, 33%, 90%);
+  --Grayish-blue-clr: hsl(219, 14%, 63%);
+  --Dark-grayish-blue-clr: hsl(219, 12%, 42%);
+  --Very-dark-blue-clr: hsl(224, 21%, 14%);
+
+  /* Typography */
+  --main-font: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--main-font);
+  display: flex;
+  flex-direction: column;
+  background-color: #f9fafe;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+/* Main */
+.main {
+  align-self: center;
+  display: grid;
+  row-gap: 2rem;
+  padding-inline: 1rem;
+  padding-block: 2rem;
+  background-color: var(--White-clr);
+  max-width: 600px;
+}
+
+/* Header Section */
+.notifications-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.notifications-title {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.notifications-num {
+  padding-inline: 0.6875rem;
+  padding-block: 0.175rem;
+  margin-left: 0.625rem;
+  border-radius: 5px;
+  background-color: var(--Blue-clr);
+  color: var(--White-clr);
+  font-size: 18px;
+}
+
+.mark-btn {
+  background-color: var(--White-clr);
+  color: var(--Dark-grayish-blue-clr);
+  font-size: 14px;
+}
+
+.mark-btn:hover {
+  color: var(--Blue-clr);
+}
+
+/* Notification Section */
+.notification-list {
+  display: grid;
+  row-gap: 0.625rem;
+}
+.profile-img {
+  width: 45px;
+  height: auto;
+  cursor: pointer;
+}
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 0.75rem;
+  padding: 1rem;
+  color: var(--Grayish-blue-clr);
+}
+.notification-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  font-size: 13px;
+}
+.notification-text {
+  color: var(--Dark-grayish-blue-clr);
+}
+.user-name {
+  color: black;
+  font-weight: 800;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.user-name:hover {
+  color: var(--Blue-clr);
+}
+.first-tournament {
+  font-weight: 700;
+  margin-left: 5px;
+  color: var(--Dark-grayish-blue-clr);
+}
+.first-tournament:hover {
+  color: var(--Blue-clr);
+}
+.notification-item.unread {
+  background-color: var(--Very-light-grayish-blue-clr);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.notification-picture {
+  height: auto;
+  width: 40px;
+  margin-left: auto;
+  cursor: pointer;
+}
+.chess-club {
+  margin-left: 5px;
+  font-weight: 800;
+}
+.active {
+  color: var(--Blue-clr);
+}
+.recent-post {
+  color: var(--Dark-grayish-blue-clr);
+  font-weight: 700;
+}
+.user-comment {
+  padding: 1rem;
+  color: var(--Dark-grayish-blue-clr);
+  border: 1px solid #e4e5e7;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.user-comment:hover {
+  background-color: #e5eff9;
+}
+.notification-item.unread .notification-text::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--Red-clr);
+  border-radius: 50%; /* to create a circular shape */
+  margin-left: 5px; /* adjust as needed for spacing */
+}
+/* Footer */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Breakpoints */
+@media screen and (min-width: 702px) {
+  body {
+    min-height: 100vh;
+    justify-content: center;
+  }
+  .main {
+    padding-inline: 1.5rem;
+    padding-block: 2rem;
+  }
+  .notification-item {
+    column-gap: 18px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main {
+    padding-inline: 3rem;
+    padding-block: 4rem;
+    max-width: 700px;
+  }
+}
